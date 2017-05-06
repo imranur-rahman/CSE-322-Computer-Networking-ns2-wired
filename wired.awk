@@ -16,19 +16,6 @@ BEGIN {
 
 	nDropPackets = 0.0;
 
-	total_energy_consumption = 0;
-
-	temp = 0;
-	
-	for (i=0; i<max_node; i++) {
-		energy_consumption[i] = 0;		
-	}
-
-	total_retransmit = 0;
-	for (i=0; i<max_pckt; i++) {
-		retransmit[i] = 0;		
-	}
-
 }
 
 {
@@ -73,23 +60,19 @@ BEGIN {
 #				printf("%15.5f   %15.5f\n", rDelay[idPacket], rReceivedTime[ idPacket] - rSentTime[ idPacket ]);
 			}
 		}
-		else if( strEvent = )
+		else if( strEvent == "-" ){
+			nReceivedPackets += 1;
+		}
+		else if( strEvent == "+" ){
+			nSentPackets += 1;
+			rSentTime[ idPacket ] = rTime;
+		}
+		else if( strEvent == "d" ){
+			nDropPackets += 1;
+		}
 
-	if( strEvent == "D"   &&   strType == "cbr" )
-	{
-		if(rTime>rEndTime) rEndTime=rTime;
-#		if(rTime<rStartTime) rStartTime=rTime;
-		nDropPackets += 1;
-	}
-
-	if( strType == "tcp" )
-	{
-#		printf("%d \n", idPacket);
-#		printf("%d %15d\n", idPacket, num_retransmit);
-		retransmit[idPacket] = num_retransmit;		
-	}
 	
-#	if(rTime<rStartTime) rStartTime=rTime;
+	if(rTime<rStartTime) rStartTime=rTime;
 	if(rTime>rEndTime) rEndTime=rTime;
 
 }
