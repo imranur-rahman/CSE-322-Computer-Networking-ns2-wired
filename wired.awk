@@ -86,10 +86,10 @@ END {
 
 #	printf( "%15.2f\n%15.5f\n%15.2f\n%15.2f\n%15.2f\n%10.2f\n%10.2f\n%10.5f\n", rThroughput, rAverageDelay, nSentPackets, nReceivedPackets, nDropPackets, rPacketDeliveryRatio, rPacketDropRatio,rTime) ;
 
-	printf("Thr : %f\n",rThroughput);
-	printf("Delay : %f\n",rAverageDelay);
-	printf("Del ratio : %f\n",rPacketDeliveryRatio);
-	printf("Drop ratio : %f\n",rPacketDropRatio);
+	printf("%f\n",rThroughput);
+	printf("%f\n",rAverageDelay);
+	printf("%f\n",rPacketDeliveryRatio);
+	printf("%f\n",rPacketDropRatio);
 
 
 

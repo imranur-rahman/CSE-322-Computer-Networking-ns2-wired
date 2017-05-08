@@ -26,7 +26,7 @@ proc finish {} {
         close $tracefd
         close $topofile
 	#Execute nam on the trace file
-        exec nam wired.nam &
+        #exec nam wired.nam &
         exit 0
 }
 
